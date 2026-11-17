@@ -28,6 +28,7 @@
         "ARCHITECTURE.md"
     ],
     "scripts": {
+        "ui": "npm run build && node dist/cli/index.js ui",
         "clean": "rimraf dist workspaces/*/dist workspaces/*/reports workspaces/*/generated",
         "build": "tsc -p tsconfig.lib.json",
         "k6-lib": "node dist/cli/index.js"

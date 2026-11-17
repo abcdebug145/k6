@@ -8,6 +8,9 @@ const cmd = process.argv[2];
 const rest = process.argv.slice(3);
 
 switch (cmd) {
+    case 'ui':
+        require('../ui/server').startUI(rest);
+        break;
     case 'init':
         process.argv = [process.argv[0], process.argv[1], ...rest];
         require('./init');
@@ -32,6 +35,7 @@ switch (cmd) {
         console.log(`k6-lib — internal performance testing library
 
 Usage:
+  k6-lib ui [--port 5666]         Open the local project manager
   k6-lib init <name>              Scaffold a new project
   k6-lib gen <workspace>          Codegen từ openapi.yaml trong workspace
   k6-lib build <workspace>        Bundle scenarios → <workspace>/dist/
